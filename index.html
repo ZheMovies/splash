@@ -1,102 +1,103 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VortexPlay</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
-        }
-
-        /* Vídeo de fundo */
-        #bg-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-
-        .container {
-            text-align: center;
-            color: white;
-            backdrop-filter: blur(5px);
-            padding: 20px;
-            border-radius: 10px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .logo {
-            font-size: 40px;
-            font-weight: bold;
-            opacity: 0;
-            animation: fadeIn 2s forwards;
-        }
-
-        .loading-bar {
-            width: 100%;
-            height: 5px;
-            background: rgba(255, 255, 255, 0.3);
-            margin-top: 20px;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        /* Barra de carregamento vermelha */
-        .progress {
-            width: 0;
-            height: 100%;
-            background: red;
-            animation: load 5s linear forwards; /* Agora dura 5 segundos */
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1); }
-        }
-
-        @keyframes load {
-            0% { width: 0; }
-            100% { width: 100%; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VortexPlay</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      background-color: #141414;
+    }
+    .container {
+      text-align: center;
+      color: white;
+      backdrop-filter: blur(5px);
+      padding: 20px;
+      border-radius: 10px;
+      position: relative;
+      z-index: 1;
+    }
+    .logo {
+      font-size: 40px;
+      font-weight: bold;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+    .logo span {
+      color: red;
+    }
+    .loading-bar {
+      width: 100%;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.3);
+      margin-top: 20px;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .progress {
+      width: 0;
+      height: 100%;
+      background: red;
+      animation: load 5s linear forwards;
+    }
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    @keyframes load {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-
-<!-- Vídeo de fundo -->
-<video id="bg-video" autoplay loop muted>
-    <source src="https://rr1---sn-bg0s7nlr.googlevideo.com/videoplayback?expire=1743579985&ei=0XrsZ4yjD-_RzLUPhbDK2QY&ip=189.84.194.132&id=dd6e2e48250906aa&itag=18&source=blogger&xpc=Egho7Zf3LnoBAQ%3D%3D&susc=bl&eaua=5uevdSbPJt0&mime=video/mp4&vprv=1&rqh=1&dur=5.456&lmt=1743551164504239&txp=1311224&sparams=expire,ei,ip,id,itag,source,xpc,susc,eaua,mime,vprv,rqh,dur,lmt&sig=AJfQdSswRQIhANKP7NxLGYxWtIaWIeWzantKDmQj-vj6KbOZiy804P94AiBJ7ze7rkgyF7Z2G80apkx--LUVouaoPe0z5UsFp-bnbg%3D%3D&cpn=ozF5klW1GDujF6Y9&c=WEB_EMBEDDED_PLAYER&cver=1.20250330.00.00&rm=sn-45nuoxu-bg0l7l&rrc=79,80,80&fexp=24350590,24350737,24350796,24350800,24350818,24350827,24350961,24350984,24351254,24351274,24351283,24351415,24351421,24351422,24351423&req_id=af9152a46fbd36e2&cm2rm=sn-pmcg-bg0de7,sn-bg0eed7e&redirect_counter=3&cms_redirect=yes&cmsv=e&met=1743551194,&mh=fG&mip=200.189.29.171&mm=34&mn=sn-bg0s7nlr&ms=ltu&mt=1743550834&mv=m&mvi=1&pl=23&rms=ltu,au&lsparams=met,mh,mip,mm,mn,ms,mv,mvi,pl,rms&lsig=AFVRHeAwRQIgZj9bsMT_EvNgjn7skg6hK5aYkGZjHLDyPEr7LSJQ8TECIQCoN9kRHpfD6tkPdRQBW9hSoQwLprT7nXEwGihF0DnzXw%3D%3D" type="video/mp4">
-    Seu navegador não suporta vídeos em HTML5.
-</video>
-
-<div class="container">
-    <div class="logo">VortexPlay</div>
+  <div class="container">
+    <div class="logo">Vortex<span>Play</span></div>
     <div class="loading-bar">
-        <div class="progress"></div>
+      <div class="progress"></div>
     </div>
-</div>
-
-<script>
+  </div>
+  <div id="mensagem-offline" style="display: none; color: #fff; font-size: 24px; text-align: center; padding: 20px;">
+    Você está offline. Por favor, verifique sua conexão com a internet.
+  </div>
+  <script>
     setTimeout(() => {
-        window.location.href = "https://zhemovies.github.io/login/"; // Substitua pelo link desejado
+      window.location.href = "https://zhemovies.github.io/login/"; // Substitua pelo link desejado
     }, 5200); // Ajustado para 5.2 segundos
-</script>
 
+    window.addEventListener('online', function() {
+      document.getElementById('mensagem-offline').style.display = 'none';
+    });
+
+    window.addEventListener('offline', function() {
+      document.getElementById('mensagem-offline').style.display = 'block';
+    });
+
+    if (!navigator.onLine) {
+      document.getElementById('mensagem-offline').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
