@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
@@ -83,23 +83,18 @@
     Você está offline. Por favor, verifique sua conexão com a internet.
   </div>
   <script>
-    window.addEventListener('error', function(event) {
-      event.preventDefault();
-      document.getElementById('mensagem-offline').style.display = 'block';
-    });
     setTimeout(() => {
-      if (navigator.onLine) {
-        window.location.href = "https://zhemovies.github.io/login/"; // Substitua pelo link desejado
-      } else {
-        document.getElementById('mensagem-offline').style.display = 'block';
-      }
+      window.location.href = "https://zhemovies.github.io/login/"; // Substitua pelo link desejado
     }, 5200); // Ajustado para 5.2 segundos
+
     window.addEventListener('online', function() {
       document.getElementById('mensagem-offline').style.display = 'none';
     });
+
     window.addEventListener('offline', function() {
       document.getElementById('mensagem-offline').style.display = 'block';
     });
+
     if (!navigator.onLine) {
       document.getElementById('mensagem-offline').style.display = 'block';
     }
